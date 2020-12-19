@@ -3,6 +3,8 @@ import './App.css';
 function App() {
   return (
     <div className="Parentbox">
+      <PhotoProduct />
+      <ProductInfo />
     </div>
   );
 }
