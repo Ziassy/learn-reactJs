@@ -28,14 +28,14 @@ function ProductInfo(props) {
         <p className="Info">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime nisi quas necessitatibus omnis error quis exercitationem ipsum deleniti reiciendis illo!
       </p>
-        <a onClick={AddCart} hre="#">Add to cart</a>
+        <a onClick={(e) => AddCart(name, e)} hre="#">Add to cart</a>
       </div>
     </div>
   );
 }
 
-function AddCart() {
-  console.log("The product has been added to cart..")
+function AddCart(e) {
+  console.log(e + "has been added to cart..")
 }
 
 export default App;
