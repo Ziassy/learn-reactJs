@@ -59,4 +59,5 @@
   color: #fff;
   background-color: rgb(221, 135, 135);
   transition: all 0.8s;
+  cursor: pointer;
 }
