@@ -83,7 +83,7 @@
   background-color: #b1b1b1;
   border-radius: 11px;
   float: left;
-  margin: 16px;
+  margin: 16px 16px 16px 0;
 }
 
 .Review-box .User p,
