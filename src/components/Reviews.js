@@ -25,7 +25,7 @@ const ReviewItems = () => {
   ];
 
   const listReview = users.map((itemReview) =>
-    <div className="Items">
+    <div key={itemReview.id} className="Items">
       <img src={itemReview.image} alt="user" ></img>
       <div className="User">
         <h3>{itemReview.name}</h3>

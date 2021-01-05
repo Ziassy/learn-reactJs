@@ -1,12 +1,21 @@
 import React from 'react'
 import '../App.css';
+import PropTypes from 'prop-types';
 
-function ProductInfo(props) {
+const PhotoProduct = () => {
+  return (
+    <div className="Photo">
+      <img src="sneakers.jpg" alt="img"></img>
+    </div>
+  );
+}
+
+const ProductInfo = (props) => {
   const { name, category, isDiscount } = props;
   // array
   const benefits = ["tidak kusut terkena air", "bahan lebih halus", "tidak gerah"];
   const listBenefits = benefits.map((itemBenefits) =>
-    <li>{itemBenefits}</li>
+    <li key={itemBenefits}>{itemBenefits}</li>
   );
   return (
     <div>
@@ -14,7 +23,7 @@ function ProductInfo(props) {
         <p className="Cate">{category}</p>
         <h1 className="Title">{name}</h1>
         <p className="Price">IDR 7.000.300</p>
-        <CheckDiscount isDiscount={isDiscount} />
+        <CheckDiscount isDiscount={isDiscount} discount={50} />
         <p className="Info">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime nisi quas necessitatibus omnis error quis exercitationem ipsum deleniti reiciendis illo!
       </p>
@@ -28,19 +37,11 @@ function ProductInfo(props) {
   );
 }
 
-function PhotoProduct() {
-  return (
-    <div className="Photo">
-      <img src="sneakers.jpg" alt="img"></img>
-    </div>
-  );
-}
-
-function CheckDiscount(props) {
-  const { isDiscount } = props;
+const CheckDiscount = (props) => {
+  const { isDiscount, discount } = props;
   if (isDiscount === "yes") {
     return (
-      <p>Diskon 50% off</p>
+      <p>Diskon {discount}% off</p>
     );
   }
   else if (isDiscount === "coming") {
@@ -56,8 +57,12 @@ function CheckDiscount(props) {
 }
 
 
-function AddCart(e) {
+const AddCart = (e) => {
   alert(e + "has been added to cart..")
 }
+
+CheckDiscount.propTypes = {
+  discount: PropTypes.number
+};
 
 export { ProductInfo, PhotoProduct }

@@ -3,7 +3,7 @@ import './App.css';
 import ReviewItems from './components/Reviews';
 import { ProductInfo, PhotoProduct } from './components/ProductInfo';
 
-function App() {
+const App = () => {
   return (
     <div className="Parentbox">
       <PhotoProduct />
